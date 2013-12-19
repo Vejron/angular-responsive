@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                 files: ['dependencies/angular/angular.js','dependencies/angular-mocks/angular-mocks.js','<%= all_srcs %>'],
                 frameworks: [ 'jasmine' ],
                 runnerPort: 9999,
-                plugins: [ 'karma-jasmine', 'karma-phantomjs-launcher','karma-firefox-launcher' ],
+                plugins: [ 'karma-jasmine', 'karma-phantomjs-launcher','karma-firefox-launcher' ]
             },
             continuous: {
                 singleRun: true,
