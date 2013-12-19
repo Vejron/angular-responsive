@@ -4,8 +4,9 @@ describe( 'Width', function() {
         opts = {widths:[{minWidth:0,maxWidth:1},
             {minWidth:2,maxWidth:2}]
         };
-        angular.module('responsive.providers.width').config(function(widthFactoryProvider) {
-            widthFactoryProvider.setOptions(opts); //can't override constant with provide.
+
+        angular.module('responsive.providers.width').config(function(optionsProvider) {
+            optionsProvider.setOptions(opts);
         });
         module('responsive.providers.width');
         inject(function(widthFactory) {
