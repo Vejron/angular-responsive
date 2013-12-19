@@ -1,0 +1,9 @@
+{
+  "name": "responsive",
+  "version": "0.0.1",
+  "devDependencies": {
+    "angular": "~1.2.5",
+    "angular-mocks": "~1.2.5"
+  },
+  "dependencies": {}
+}
