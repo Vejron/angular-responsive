@@ -1,4 +1,4 @@
-angular.module( 'responsive.services.listener', ['responsive.providers.width'])
+angular.module( 'responsive.listener', ['responsive.width'])
     .service('eeEventListener', ['$window','widthFactory',function ($window,widthFactory){
     var lastWidth = widthFactory.getWidth($window.innerWidth);
     var listen = function(){
