@@ -35,19 +35,19 @@ describe( 'ResponderRule', function() {
         expect(rule.medium.visible).toBeFalsy();
         expect(rule.large.visible).toBeFalsy();
 	});
-    it('single class',function(){
+    it('Single class',function(){
         var rule = ruleFactory.getRule("vs");
         expect(rule.small.visible).toBeTruthy();
         expect(rule.medium.visible).toBeFalsy();
         expect(rule.large.visible).toBeFalsy();
     });
-    it('two classes',function(){
+    it('Two classes',function(){
         var rule = ruleFactory.getRule("vs vm");
         expect(rule.small.visible).toBeTruthy();
         expect(rule.medium.visible).toBeTruthy();
         expect(rule.large.visible).toBeFalsy();
     });
-    it('bad class',function(){
+    it('Bad class',function(){
         var exec = function(){
             var rule = ruleFactory.getRule("vsvm");
         };
