@@ -1,8 +1,8 @@
-angular.module( 'example', ['responsive.services.listener','responsive.providers.width'
+angular.module( 'example', ['responsive.listener','responsive.responder.rule','responsive.width'
 ])
 
 
-.controller( 'ExampleController', ['$scope','eeEventListener',function( $scope,listener ){
+.controller( 'ExampleController', ['$scope','eeEventListener','options',function( $scope,listener,options ){
     $scope.test = "TEST!";
 
 }]);
