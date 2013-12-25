@@ -1,6 +1,7 @@
 angular.module( 'responsive.listener', ['responsive.width'])
     .service('eeEventListener', ['$window','widthFactory',function ($window,widthFactory){
     var lastWidth = widthFactory.getWidth($window.innerWidth);
+    //todo only subscribe when one or more listeners are active.
     var listen = function(){
         var w = angular.element($window);
         w.on('resize', handler);
