@@ -1,4 +1,4 @@
-angular.module( 'example', ['responsive.listener','responsive.responder.rule','responsive.width'
+angular.module( 'example', ['responsive.listener','responsive.responder.rule','responsive.width','responsive.class'
 ])
 
 
