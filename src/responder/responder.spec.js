@@ -1,4 +1,4 @@
-describe( 'Responder', function() {
+describe( 'Boolean Responder', function() {
 	var responder,mockListener,MockResponderRuleFactory;
     beforeEach(function(){
         mockListener = {};
@@ -23,7 +23,7 @@ describe( 'Responder', function() {
         });
 
         inject(function(responderFactory) {
-            responder = responderFactory.getResponder("");
+            responder = responderFactory.getBooleanResponder("");
         });
 
     });

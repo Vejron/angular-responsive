@@ -14,7 +14,7 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         listener.unsubscribe(this.listener);
     };
     var ResponderFactory = function(){};
-    ResponderFactory.prototype.getResponder = function(classes){
+    ResponderFactory.prototype.getBooleanResponder = function(classes){
         var rule = responderRuleFactory.getRule(classes);
         return new Responder(rule);
     };

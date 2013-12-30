@@ -14,7 +14,7 @@ angular.module('responsive.if',['responsive.responder']).directive('eeResponsive
                     responder.deregister();
                 }
                 if (value){
-                    responder = responderFactory.getResponder(value);
+                    responder = responderFactory.getBooleanResponder(value);
                     responder.registerTrigger(responderFunction);
                 }
                 ready = true;
