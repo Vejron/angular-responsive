@@ -3,15 +3,14 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
     var Responder = function(rule){
         this.rule = rule;
     };
-    Responder.prototype.listener = function(width){
-        this.triggerFunction(this.rule[width.name].visible);
-    };
     Responder.prototype.registerTrigger = function(func){
-        this.triggerFunction = func;
+        var rule = this.rule;
+        this.listener = function(width){
+            func(rule[width.name].visible);
+        };
         listener.subscribe(this.listener);
     };
     Responder.prototype.deregister = function(){
-        this.triggerFunction = null;
         listener.unsubscribe(this.listener);
     };
     var ResponderFactory = function(){};

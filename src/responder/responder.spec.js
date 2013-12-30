@@ -37,17 +37,18 @@ describe( 'Responder', function() {
         responder.registerTrigger(test);
         expect(mockListener.subscribe).toHaveBeenCalled();
 	});
+    //should trigger on register.
     it ('should get false on small', function(){
         var trigger = jasmine.createSpy('trigger');
         responder.registerTrigger(trigger);
-        mockListener.subscriber.apply(responder,[{name:"small"}]);
+        mockListener.subscriber({name:"small"});
         expect(trigger).toHaveBeenCalledWith(false);
 
     });
     it ('should get true on big', function(){
         var trigger = jasmine.createSpy('trigger');
         responder.registerTrigger(trigger);
-        mockListener.subscriber.apply(responder,[{name:"big"}]);
+        mockListener.subscriber({name:"big"});
         expect(trigger).toHaveBeenCalledWith(true);
 
     });
