@@ -6,7 +6,8 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
     Responder.prototype.registerTrigger = function(func){
         var rule = this.rule;
         this.listener = function(width){
-            func(rule[width.name].visible);
+            var response = rule[width.name].visible;
+            func(response);
         };
         listener.subscribe(this.listener);
     };
@@ -18,5 +19,9 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         var rule = responderRuleFactory.getRule(classes);
         return new Responder(rule);
     };
+    ResponderFactory.prototype.getClassResponder = function(map){
+        //multiple rules one for each class.
+        //if rule is true then add class to string
+    }
     return new ResponderFactory();
 }]);

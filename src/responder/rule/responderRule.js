@@ -64,9 +64,8 @@ angular.module( 'responsive.responder.rule', ['responsive.width'])
             };
             var RuleFactory = function(){};
             RuleFactory.prototype.getRule = function(classes){
-                var active = getActiveClassDescriptors(classes); //better name is list of the different class rules, maybe active rules
+                var active = getActiveClassDescriptors(classes);
                 var rule = createRule(active);
-                //http://www.sitepoint.com/unit-and-e2e-testing-in-angularjs/
                 return rule;
             };
 
