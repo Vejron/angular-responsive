@@ -19,9 +19,5 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         var rule = responderRuleFactory.getRule(classes);
         return new Responder(rule);
     };
-    ResponderFactory.prototype.getClassResponder = function(map){
-        //multiple rules one for each class.
-        //if rule is true then add class to string
-    }
     return new ResponderFactory();
 }]);
