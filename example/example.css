@@ -1,3 +1,39 @@
-.red{
-    color:red;
+body{
+    background-color: #eeeeee;
+}
+.info{
+    display: table;
+}
+.info>div{
+    display: table-row;
+}
+.info>div>span{
+    display: table-cell;
+    padding:3px;
+}
+.infoBlock{
+    display: inline-block;
+    position: relative;
+
+}
+.infoBlock .content{
+    position: relative;
+}
+.infoBlock .content>.overlay{
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+.overlay{
+    background-color: #83c77b;
+}
+.number{
+    position: fixed;
+    right: -.1em;
+    bottom: 0;
+    font-size: 200px;
+    line-height: .7em;
+    color:#aaaaaa;
 }

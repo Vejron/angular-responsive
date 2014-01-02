@@ -2,12 +2,22 @@
 <html ng-app="example" ng-controller="ExampleController">
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="example.css">
     <script type="text/javascript" src="../dependencies/angular/angular.js"></script>
     <script type="text/javascript" src="../build/angular-responsive-0.0.1.js"></script>
     <script type="text/javascript" src="ExampleController.js"></script>
 </head>
 <body>
-
-<div ee-responsive-if="'visible-sm visible-xs'">test2:{{test}}</div>
+<div class="info">
+    <div ng-repeat="class in classes">
+        <span class="name">.{{class}}</span>
+        <span class="infoBlock">
+            <span class="content">
+            <span>hidden</span><span ee-responsive-if="class" class="overlay">visible</span>
+            </span>
+        </span>
+    </div>
+</div>
+<div class="number">{{width}}</div>
 </body>
 </html>
