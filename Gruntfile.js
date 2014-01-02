@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         },
         karma: {
             options: {
-                files: ['dependencies/angular/angular.js','dependencies/angular-mocks/angular-mocks.js','<%= all_srcs %>'],
+                files: ['bower_components/angular/angular.js','bower_components/angular-mocks/angular-mocks.js','<%= all_srcs %>'],
                 frameworks: [ 'jasmine' ],
                 runnerPort: 9999,
                 plugins: [ 'karma-jasmine', 'karma-phantomjs-launcher','karma-firefox-launcher' ]
