@@ -1,5 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+@import url(http://fonts.googleapis.com/css?family=Days+One);
 body{
-    background-color: #eeeeee;
+    background-color: #f4f4f4;
+    color:#333333;
+    font-family: 'Metrophobic', sans-serif;
 }
 .info{
     display: table;
@@ -18,9 +22,13 @@ body{
 }
 .infoBlock .content{
     position: relative;
+    display: block;
+    padding:5px;
 }
 .infoBlock .content>.overlay{
     position: absolute;
+    display: block;
+    padding:5px;
     left:0;
     right:0;
     bottom:0;
@@ -31,9 +39,10 @@ body{
 }
 .number{
     position: fixed;
-    right: -.1em;
+    right: 0;
     bottom: 0;
     font-size: 200px;
-    line-height: .7em;
-    color:#aaaaaa;
+    line-height: .8em;
+    color:#cccccc;
+    font-family: 'Days One', sans-serif;
 }
