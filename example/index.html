@@ -8,16 +8,9 @@
     <script type="text/javascript" src="ExampleController.js"></script>
 </head>
 <body>
-<div class="info">
-    <div ng-repeat="class in classes">
-        <span class="name">.{{class}}</span>
-        <span class="infoBlock">
-            <span class="content">
-            <span>hidden</span><span ee-responsive-if="class" class="overlay">visible</span>
-            </span>
-        </span>
-    </div>
-</div>
+<h1>Angular Responsive</h1>
+
+<div ng-include="'includes/responsiveIf.html'"></div>
 <div class="number">{{width}}</div>
 </body>
 </html>

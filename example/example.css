@@ -6,7 +6,9 @@ body{
     font-family: 'Metrophobic', sans-serif;
 }
 .info{
+    float:left;
     display: table;
+    margin-right: 2em;
 }
 .info>div{
     display: table-row;
