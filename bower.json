@@ -1,9 +1,15 @@
 {
-  "name": "responsive",
-  "version": "0.0.1",
-  "devDependencies": {
-    "angular": "~1.2.5",
-    "angular-mocks": "~1.2.5"
-  },
-  "dependencies": {}
+    "name": "responsive",
+    "description": "Responsive directives for AngularJS",
+    "version": "0.0.1",
+    "devDependencies": {
+        "angular": "~1.2.5",
+        "angular-mocks": "~1.2.5"
+    },
+    "keywords": [
+        "angular",
+        "responsive"
+    ],
+    "dependencies": {},
+    "license": "MIT"
 }
