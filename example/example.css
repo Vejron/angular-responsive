@@ -1,12 +1,40 @@
 @import url(http://fonts.googleapis.com/css?family=Metrophobic);
-@import url(http://fonts.googleapis.com/css?family=Days+One);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 body{
     background-color: #f4f4f4;
     color:#333333;
     font-family: 'Metrophobic', sans-serif;
+    font-size:12px;
+}
+h1{
+    font-size: 1.5rem;
+}
+h2{
+    font-size: 1.2rem;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Oswald', sans-serif;
+}
+.topMenu a{
+    display: inline-block;
+    padding: 5px;
+    border:1px solid #dddddd;
+}
+.topMenu a.selected{
+    background-color: #cccccc;
+
+}
+.mainContent{
+    position: relative;
+    z-index: 2;
+}
+.heading{
+    clear: both;
+}
+.float{
+    float:left;
 }
 .info{
-    float:left;
     display: table;
     margin-right: 2em;
 }
@@ -46,5 +74,6 @@ body{
     font-size: 200px;
     line-height: .8em;
     color:#cccccc;
-    font-family: 'Days One', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
 }

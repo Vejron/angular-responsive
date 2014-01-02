@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="example" ng-controller="ExampleController">
+<html ng-app="default" ng-controller="DefaultController">
 <head>
-    <title></title>
+    <meta charset="utf-8">
+    <title>angular-responsive</title>
     <link rel="stylesheet" type="text/css" href="example.css">
     <script type="text/javascript" src="../dependencies/angular/angular.js"></script>
     <script type="text/javascript" src="../build/angular-responsive-0.0.1.js"></script>
+    <script type="text/javascript" src="DefaultController.js"></script>
     <script type="text/javascript" src="ExampleController.js"></script>
 </head>
-<body>
-<h1>Angular Responsive</h1>
-
-<div ng-include="'includes/responsiveIf.html'"></div>
+<body ng-controller="ExampleController">
+<div class="mainContent">
+    <div ng-include="'includes/header.html'"></div>
+    <div ng-include="'includes/responsiveIf.html'"></div>
+</div>
 <div class="number">{{width}}</div>
 </body>
 </html>

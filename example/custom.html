@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="custom" ng-controller="CustomController">
+<head>
+    <meta charset="utf-8">
+    <title>angular-responsive</title>
+    <link rel="stylesheet" type="text/css" href="example.css">
+    <script type="text/javascript" src="../dependencies/angular/angular.js"></script>
+    <script type="text/javascript" src="../build/angular-responsive-0.0.1.js"></script>
+    <script type="text/javascript" src="CustomController.js"></script>
+    <script type="text/javascript" src="ExampleController.js"></script>
+</head>
+<body ng-controller="ExampleController">
+<div class="mainContent">
+    <div ng-include="'includes/header.html'"></div>
+    <div ng-include="'includes/responsiveIf.html'"></div>
+</div>
+<div class="number">{{width}}</div>
+</body>
+</html>
