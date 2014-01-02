@@ -1,5 +1,5 @@
 {
-    "name": "responsive",
+    "name": "angular-responsive",
     "description": "Responsive directives for AngularJS",
     "version": "0.0.1",
     "devDependencies": {
