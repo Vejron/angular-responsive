@@ -42,11 +42,9 @@ describe( 'Listener', function() {
 		mockWindow.fakeResize();
 		expect(mockSubscriber.callCount).toEqual(1);
 	});
-    //todo use mocked width factory
     it('should get a call if width changes class', function(){
         mockWindow.innerWidth = 11;
         mockWindow.fakeResize();
         expect(mockSubscriber.callCount).toEqual(2);
     });
-    //todo: subscribing with non-function should throw error;
 });

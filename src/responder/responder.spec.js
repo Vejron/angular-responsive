@@ -28,7 +28,7 @@ describe( 'Boolean Responder', function() {
 
     });
 
-	it ('Shuldn\'t have subscribed on init',function(){
+	it ('Shouldn\'t have subscribed on init',function(){
 		expect(mockListener.subscribe).not.toHaveBeenCalled();
 	});
 
@@ -37,7 +37,6 @@ describe( 'Boolean Responder', function() {
         responder.registerTrigger(test);
         expect(mockListener.subscribe).toHaveBeenCalled();
 	});
-    //should trigger on register.
     it ('should get false on small', function(){
         var trigger = jasmine.createSpy('trigger');
         responder.registerTrigger(trigger);
