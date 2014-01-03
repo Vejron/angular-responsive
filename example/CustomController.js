@@ -1,4 +1,4 @@
-angular.module( 'custom', ['example','responsive.width'])
+angular.module( 'custom', ['example'])
 
 .controller( 'CustomController', ['$scope',function( $scope ){
         $scope.visibleClasses = ["show-small","show-medium","show-large"];
@@ -9,13 +9,13 @@ angular.module( 'custom', ['example','responsive.width'])
             {name:'large',desc:'≥1100px'}
             ]
         $scope.selected = 'custom';
-}]).config(function(widthOptionsProvider) {
-        var opts = {widths:[{name:"small",minWidth:0,maxWidth:599},
+}]).config(["widthOptionsProvider",function(provider) {
+        var options = {widths:[{name:"small",minWidth:0,maxWidth:599},
             {name:"medium",minWidth:600,maxWidth:1099},
             {name:"large",minWidth:1100,maxWidth:Infinity}]
         };
-        widthOptionsProvider.setOptions(opts);
-}).config(["responderRuleFactoryProvider",function(provider){
+        provider.setOptions(options);
+}]).config(["responderRuleFactoryProvider",function(provider){
         var classes = {classes:{
             "show-small": {visible:["small"]},
             "show-medium": {visible:["medium"]},
@@ -26,4 +26,4 @@ angular.module( 'custom', ['example','responsive.width'])
         }
         };
         provider.setResponderClasses(classes);
-    }]);
+}]);
