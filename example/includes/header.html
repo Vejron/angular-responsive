@@ -1,29 +1,31 @@
-<h1>Angular Responsive</h1>
+<h1 class="topHeading">Angular Responsive</h1>
         <div class="topMenu">
             <a ng-class="{selected:selected=='default'}" href="index.html">Default classes</a>
             <a ng-class="{selected:selected=='custom'}" href="custom.html">Custom classes</a>
         </div>
 <h2>Classes and widths</h2>
-<div class="float info">
-    <div><span></span><span ng-repeat="size in sizes"><span class="title">{{size.name}}</span><br><span class="widthInfo">{{size.desc}}</span></span></div>
-    <div ng-repeat="class in visibleClasses" ng-init="outerIndex = $index">
-    <span>.{{class}}</span>
-    <span class="infoBlock"  ng-repeat="i in sizes">
-        <span class="content">
-            <span>hidden</span><span ng-if="outerIndex == $index" class="overlay">visible</span>
-        </span>
-    </span>
+<div class="wideContainer">
+    <div class="float info">
+        <div class="topRow"><span class="name"></span><span ng-repeat="size in sizes"><span class="title">{{size.name}}</span><br><span class="widthInfo">{{size.desc}}</span></span></div>
+        <div ng-repeat="class in visibleClasses" ng-init="outerIndex = $index">
+            <span class="name">.{{class}}</span>
+            <span class="infoBlock"  ng-repeat="i in sizes">
+                <span class="content">
+                    <span>hidden</span><span ng-if="outerIndex == $index" class="overlay">visible</span>
+                </span>
+            </span>
+        </div>
     </div>
-</div>
-<div class="float info">
-    <div><span></span><span ng-repeat="size in sizes"><span class="title">{{size.name}}</span><br><span class="widthInfo">{{size.desc}}</span></span></div>
-    <div ng-repeat="class in hiddenClasses" ng-init="outerIndex = $index">
-        <span>.{{class}}</span>
-    <span class="infoBlock"  ng-repeat="i in sizes">
-        <span class="content">
-            <span>hidden</span><span ng-if="outerIndex != $index" class="overlay">visible</span>
-        </span>
-    </span>
-    </div>
+    <div class="float info">
+        <div class="topRow"><span class="name"></span><span ng-repeat="size in sizes"><span class="title">{{size.name}}</span><br><span class="widthInfo">{{size.desc}}</span></span></div>
+        <div ng-repeat="class in hiddenClasses" ng-init="outerIndex = $index">
+            <span class="name">.{{class}}</span>
+            <span class="infoBlock"  ng-repeat="i in sizes">
+                <span class="content">
+                    <span>hidden</span><span ng-if="outerIndex != $index" class="overlay">visible</span>
+                </span>
+            </span>
+        </div>
 
+    </div>
 </div>

@@ -9,6 +9,9 @@ body{
 h1{
     font-size: 1.5rem;
 }
+h1.topHeading{
+    margin-top:0;
+}
 h2{
     font-size: 1.2rem;
 }
@@ -19,6 +22,9 @@ h1,h2,h3,h4,h5,h6{
     display: inline-block;
     padding: 5px;
     border:1px solid #dddddd;
+    color:#333333;
+    text-decoration: none;
+    border-radius: 3px;
 }
 .topMenu a.selected{
     background-color: #cccccc;
@@ -27,6 +33,10 @@ h1,h2,h3,h4,h5,h6{
 .mainContent{
     position: relative;
     z-index: 2;
+    overflow-x: hidden;
+}
+.wideContainer{
+    width:600px;
 }
 .heading{
     clear: both;
@@ -37,6 +47,7 @@ h1,h2,h3,h4,h5,h6{
 .info{
     display: table;
     margin-right: 2em;
+
 }
 .info>div{
     display: table-row;
@@ -44,6 +55,17 @@ h1,h2,h3,h4,h5,h6{
 .info>div>span{
     display: table-cell;
     padding:3px;
+}
+.info .name{
+    border-right: 1px solid #ddd;
+}
+.info .topRow>span{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.info .topRow .widthInfo{
+    font-size: .9em;
+    color:#666;
 }
 .infoBlock{
     display: inline-block;

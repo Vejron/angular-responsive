@@ -7,7 +7,7 @@ angular.module( 'default', ['example'])
         $scope.sizes = [
             {name:'xsmall',desc:'<768px'},
             {name:'small',desc:'≥768px'},
-            {name:'medium',desc:'≥768px'},
+            {name:'medium',desc:'≥992px'},
             {name:'large',desc:'≥1200px'}
             ]
         $scope.selected = 'default';
