@@ -53,14 +53,14 @@ These are used as rules for triggering based on the widths defined above.
 
 ```javascript
 angular.module('myModule', []).config(["responderRuleFactoryProvider",function(provider){
-    var classes = {classes:{
-        "show-small": {visible:["small"]},
-        "show-medium": {visible:["medium"]},
-        "show-large": {visible:["large"]},
-        "hide-small": {visible:["medium","large"]},
-        "hide-medium": {visible:["small","large"]},
-        "hide-large": {visible:["small","medium"]}
-    }
+    var classes = {classes:[
+      {name:"show-small", rule: {visible:["small"]}},
+      {name:"show-medium", rule: {visible:["medium"]}},
+      {name:"show-large", rule: {visible:["large"]}},
+      {name:"hide-small", rule: {visible:["medium","large"]}},
+      {name:"hide-medium", rule: {visible:["small","large"]}},
+      {name:"hide-large", rule: {visible:["small","medium"]}}
+    ]
     };
     provider.setResponderClasses(classes);
 }]);
