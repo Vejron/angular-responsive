@@ -23,9 +23,9 @@ describe( 'Listener', function() {
             $provide.value('widthFactory', new MockWidth());
 		});
 		
-		inject(function(eeEventListener) {
+		inject(function(widthEventListener) {
 
-			listener = eeEventListener;
+			listener = widthEventListener;
 		});
 		listener.subscribe(mockSubscriber);
 	});

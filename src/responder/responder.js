@@ -1,5 +1,5 @@
 angular.module( 'responsive.responder', ['responsive.listener','responsive.responder.rule'])
-    .factory('responderFactory',['eeEventListener','responderRuleFactory',function(listener,responderRuleFactory){
+    .factory('responderFactory',['widthEventListener','responderRuleFactory',function(listener,responderRuleFactory){
     var Responder = function(rule){
         this.rule = rule;
     };

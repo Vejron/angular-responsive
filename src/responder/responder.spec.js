@@ -18,7 +18,7 @@ describe( 'Boolean Responder', function() {
         };
         module('responsive.responder',function($provide) {
 
-            $provide.value('eeEventListener', mockListener);
+            $provide.value('widthEventListener', mockListener);
             $provide.value('responderRuleFactory', MockResponderRuleFactory);
         });
 
