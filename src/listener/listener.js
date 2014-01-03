@@ -38,7 +38,6 @@ angular.module( 'responsive.listener', ['responsive.width'])
     };
     var callSubscribed = function(value){
         for (var i = 0; i < subscribed.length; i++) {
-            console.log('calling');
             var subscriber = subscribed[i];
             subscriber(value);
         }
