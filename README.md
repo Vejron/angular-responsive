@@ -10,7 +10,7 @@ npm install
 bower install
 ```
 
-To build the library just run grunt.
+Then to build the library just run grunt.
 
 ```shell
 grunt
@@ -98,7 +98,7 @@ Add a dependency to the directive
 angular.module('myModule', ['responsive.if']);
 ```
 
-then just add an attribute `ee-responsive-if` with a string value consisting of one or more classes separated by a space
+then just add the attribute `ee-responsive-if` with a string value consisting of one or more classes separated by a space
 
 ```html
     <div ee-responsive-if="'visible-sm visible-md'">angular-responsive</div>
