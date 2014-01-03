@@ -51,11 +51,16 @@ describe('if', function(){
         mockResponder.triggerFalse();
         expect(root.children().length).toBe(0);
     });
-    it('should call unregister if rule has changed',function(){
+    it('should call deregister if rule has changed',function(){
         createDirective();
         mockResponder.triggerTrue();
         $scope.fake = "'fake2";
         $scope.$apply();
+        expect(mockResponder.deregister).toHaveBeenCalled();
+    });
+    it('should deregister on scope destruction', function(){
+        createDirective();
+        $scope.$destroy();
         expect(mockResponder.deregister).toHaveBeenCalled();
     });
     //test unregister called on destroy

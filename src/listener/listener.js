@@ -20,7 +20,7 @@ angular.module( 'responsive.listener', ['responsive.width'])
     this.unSubscribe = function(func){
         if(hasSubscribed(func)){
             var index = subscribed.indexOf(func);
-            subscribed.slice(index,1);
+            subscribed.splice(index,1);
         }
     };
     var handler = function(event){
@@ -38,6 +38,7 @@ angular.module( 'responsive.listener', ['responsive.width'])
     };
     var callSubscribed = function(value){
         for (var i = 0; i < subscribed.length; i++) {
+            console.log('calling');
             var subscriber = subscribed[i];
             subscriber(value);
         }

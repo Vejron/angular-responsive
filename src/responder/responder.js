@@ -12,7 +12,7 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         listener.subscribe(this.listener);
     };
     Responder.prototype.deregister = function(){
-        listener.unsubscribe(this.listener);
+        listener.unSubscribe(this.listener);
     };
     var ResponderFactory = function(){};
     ResponderFactory.prototype.getBooleanResponder = function(classes){

@@ -3,11 +3,11 @@ describe( 'Boolean Responder', function() {
     beforeEach(function(){
         mockListener = {};
         mockListener.subscribe = function(subscriber){mockListener.subscriber = subscriber;};
-        mockListener.unsubscribe = function(subscriber){};
+        mockListener.unSubscribe = function(subscriber){};
 
         spyOn(mockListener,'subscribe').andCallThrough();
 
-        spyOn(mockListener,'unsubscribe').andCallThrough();
+        spyOn(mockListener,'unSubscribe').andCallThrough();
 
         MockResponderRuleFactory = {};
         MockResponderRuleFactory.getRule = function(){

@@ -10,15 +10,21 @@ angular.module('responsive.if',['responsive.responder']).directive('eeResponsive
             var ready = false;
             $scope.$watch($attr.eeResponsiveIf, function (value) {
                 ready = false;
-                if (responder != null){
-                    responder.deregister();
-                }
+                deregister();
                 if (value){
 
                     responder = responderFactory.getBooleanResponder(value);
                     responder.registerTrigger(responderFunction);
                 }
                 ready = true;
+            });
+            var deregister = function(){
+                if (responder != null){
+                    responder.deregister();
+                }
+            };
+            $scope.$on('$destroy',function(){
+                deregister();
             });
             var responderFunction = function(value){
                 ngIfWatchAction(value);

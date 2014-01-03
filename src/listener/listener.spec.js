@@ -47,4 +47,10 @@ describe( 'Listener', function() {
         mockWindow.fakeResize();
         expect(mockSubscriber.callCount).toEqual(2);
     });
+    it('should not get called again if unsubscribed.',function(){
+        listener.unSubscribe(mockSubscriber);
+        mockWindow.innerWidth = 11;
+        mockWindow.fakeResize();
+        expect(mockSubscriber.callCount).toEqual(1);
+    });
 });
