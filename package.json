@@ -10,7 +10,7 @@
   "bugs": "",
   "repository": {
     "type": "git",
-    "url": "git@"
+    "url": "git:"
   },
   "dependencies": {},
   "devDependencies": {

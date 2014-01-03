@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         srcs:['src/**/*.js','!src/**/*.spec.js'],
         test_srcs:['src/**/*.spec.js'],
         all_srcs: 'src/**/*.js',
-        file_name: '<%= pkg.name %>-<%= pkg.version %>',
+        file_name: '<%= pkg.name %>',
         banner:
             '/**\n' +
                 ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +

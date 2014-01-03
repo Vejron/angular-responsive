@@ -1,14 +1,14 @@
 angular.module( 'responsive.responder.rule', ['responsive.width'])
-.constant('defaultResponderClasses',{classes:{
-        "visible-xs": {visible:["xsmall"]},
-        "visible-sm": {visible:["small"]},
-        "visible-md": {visible:["medium"]},
-        "visible-lg": {visible:["large"]},
-        "hidden-xs": {visible:["small","medium","large"]},
-        "hidden-sm": {visible:["xsmall","medium","large"]},
-        "hidden-md": {visible:["xsmall","small","large"]},
-        "hidden-lg": {visible:["xsmall","small","medium"]}
-    }})
+.constant('defaultResponderClasses',{classes:[
+        {name:"visible-xs", rule: {visible:["xsmall"]}},
+        {name:"visible-sm", rule: {visible:["small"]}},
+        {name:"visible-md", rule: {visible:["medium"]}},
+        {name:"visible-lg", rule: {visible:["large"]}},
+        {name:"hidden-xs", rule: {visible:["small","medium","large"]}},
+        {name:"hidden-sm", rule: {visible:["xsmall","medium","large"]}},
+        {name:"hidden-md", rule: {visible:["xsmall","small","large"]}},
+        {name:"hidden-lg", rule: {visible:["xsmall","small","medium"]}}
+    ]})
 .provider('responderRuleFactory',['defaultResponderClasses',function(defaultClasses){
     var responderClasses = null;
     return {
@@ -27,15 +27,23 @@ angular.module( 'responsive.responder.rule', ['responsive.width'])
                     return active;
                 }
                 for (var i = 0; i < classes.length; i++) {
-                    var cssClass = classes[i];
-                    var item = responderClasses.classes[cssClass];
-                    if (item === undefined){
-                        //todo test this.
+                    var item = getClassRules(classes[i]);
+                    if (item === null){
                         throw "Class not supported.";
                     }
                     active.push(item);
                 }
                 return active;
+            };
+            var getClassRules = function(cssClass){
+                var classes = responderClasses.classes;
+                for (var i = 0; i < classes.length; i++) {
+                    var responderClass = classes[i];
+                    if (responderClass.name === cssClass){
+                        return responderClass.rule;
+                    }
+                }
+                return null;
             };
             var createDefaultRule = function(){
                 var rule = {};
@@ -44,7 +52,6 @@ angular.module( 'responsive.responder.rule', ['responsive.width'])
                     var width = availableWidths[i];
                     var name = width.name;
                     if (name === undefined){
-                        //todo:test this.
                         throw "WidthOption lacks name";
                     }
                     rule[name] = {visible:false};

@@ -5,14 +5,14 @@ describe( 'ResponderRule', function() {
                         {name:"medium",minWidth:11,maxWidth:20},
                         {name:"large",minWidth:21,maxWidth:Infinity}]
         };
-        var classes = {classes:{
-            "vs": {visible:["small"]},
-            "vm": {visible:["medium"]},
-            "vl": {visible:["large"]},
-            "hs": {visible:["medium","large"]},
-            "hm": {visible:["small","large"]},
-            "hl": {visible:["small","medium"]}
-            }
+        var classes = {classes:[
+            {name:"vs", rule: {visible:["small"]}},
+            {name:"vm", rule: {visible:["medium"]}},
+            {name:"vl", rule: {visible:["large"]}},
+            {name:"hs", rule: {visible:["medium","large"]}},
+            {name:"hm", rule: {visible:["small","large"]}},
+            {name:"hl", rule: {visible:["small","medium"]}}
+            ]
         };
         angular.module('responsive.width').config(["widthOptionsProvider",function(widthOptionsProvider) {
             widthOptionsProvider.setOptions(widthOptions);
