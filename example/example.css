@@ -18,6 +18,17 @@ h2{
 h1,h2,h3,h4,h5,h6{
     font-family: 'Oswald', sans-serif;
 }
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
 .topMenu a{
     display: inline-block;
     padding: 5px;

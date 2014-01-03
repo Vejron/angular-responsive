@@ -4,7 +4,7 @@
             <a ng-class="{selected:selected=='custom'}" href="custom.html">Custom classes</a>
         </div>
 <h2>Classes and widths</h2>
-<div class="wideContainer">
+<div class="wideContainer clear">
     <div class="float info">
         <div class="topRow"><span class="name"></span><span ng-repeat="size in sizes"><span class="title">{{size.name}}</span><br><span class="widthInfo">{{size.desc}}</span></span></div>
         <div ng-repeat="class in visibleClasses" ng-init="outerIndex = $index">
