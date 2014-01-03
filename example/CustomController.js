@@ -9,12 +9,12 @@ angular.module( 'custom', ['example','responsive.width'])
             {name:'large',desc:'≥1100px'}
             ]
         $scope.selected = 'custom';
-}]).config(function(optionsProvider) {
-    var opts = {widths:[{name:"small",minWidth:0,maxWidth:599},
-        {name:"medium",minWidth:600,maxWidth:1099},
-        {name:"large",minWidth:1100,maxWidth:Infinity}]
-    };
-    optionsProvider.setOptions(opts);
+}]).config(function(widthOptionsProvider) {
+        var opts = {widths:[{name:"small",minWidth:0,maxWidth:599},
+            {name:"medium",minWidth:600,maxWidth:1099},
+            {name:"large",minWidth:1100,maxWidth:Infinity}]
+        };
+        widthOptionsProvider.setOptions(opts);
 }).config(["responderRuleFactoryProvider",function(provider){
         var classes = {classes:{
             "show-small": {visible:["small"]},

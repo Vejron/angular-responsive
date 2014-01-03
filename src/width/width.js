@@ -3,7 +3,7 @@ constant('defaultOptions',{widths:[{name:'xsmall',minWidth:0,maxWidth:767},
              {name:'small',minWidth:768,maxWidth:991},
              {name:'medium',minWidth:992,maxWidth:1199},
              {name:'large',minWidth:1200, maxWidth:Infinity}]})
-.factory('widthFactory',['options',function(options){
+.factory('widthFactory',['widthOptions',function(options){
     var WidthFactory = function(){};
     WidthFactory.prototype.getWidth = function(width){
         for (var i = 0; i < options.widths.length; i++) {
@@ -17,7 +17,7 @@ constant('defaultOptions',{widths:[{name:'xsmall',minWidth:0,maxWidth:767},
     };
     return new WidthFactory();
 
-}]).provider('options',['defaultOptions',function(defaultOptions){
+}]).provider('widthOptions',['defaultOptions',function(defaultOptions){
         var opts = null;
         return {
             setOptions: function(val) {

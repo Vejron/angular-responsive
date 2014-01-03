@@ -15,7 +15,7 @@ angular.module( 'responsive.responder.rule', ['responsive.width'])
         setResponderClasses: function(val) {
             responderClasses = val;
         },
-        $get: ['options',function(widthOptions) {
+        $get: ['widthOptions',function(widthOptions) {
             if (responderClasses === null){
                 responderClasses = defaultClasses;
             }

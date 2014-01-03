@@ -14,8 +14,8 @@ describe( 'ResponderRule', function() {
             "hl": {visible:["small","medium"]}
             }
         };
-        angular.module('responsive.width').config(["optionsProvider",function(optionsProvider) {
-            optionsProvider.setOptions(widthOptions);
+        angular.module('responsive.width').config(["widthOptionsProvider",function(widthOptionsProvider) {
+            widthOptionsProvider.setOptions(widthOptions);
         }]);
         angular.module('responsive.responder.rule').config(["responderRuleFactoryProvider",function(provider){
             provider.setResponderClasses(classes);

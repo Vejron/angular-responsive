@@ -5,8 +5,8 @@ describe( 'Width', function() {
             {minWidth:2,maxWidth:2}]
         };
 
-        angular.module('responsive.width').config(function(optionsProvider) {
-            optionsProvider.setOptions(opts);
+        angular.module('responsive.width').config(function(widthOptionsProvider) {
+            widthOptionsProvider.setOptions(opts);
         });
         module('responsive.width');
         inject(function(widthFactory) {
