@@ -34,13 +34,21 @@ There are two example pages, one uses the default values and one uses custom cla
 There are a number of classes used for showing and hiding.
 
 `visible-xs` : Only showing on 'xsmall'.
+
 `visible-sm` : Only showing on 'small'.
+
 `visible-md` : Only showing on 'medium'.
+
 `visible-lg` : Only showing on 'large'.
+
 `hidden-xs` : Showing on all except on 'xsmall'.
+
 `hidden-sm` : Showing on all except on 'small'.
+
 `hidden-md` : Showing on all except on 'medium'.
+
 `hidden-lg` : Showing on all except on 'large'.
+
 
 #### Bootstrap
 
@@ -51,8 +59,11 @@ The classes and widths used by the directive have been copied from [Bootstrap](h
 The named widths are the following:
 
 `xsmall` : Widths up to 767px.
+
 `small` : Widths from 768px up to 991px.
+
 `medium` : Widths from 992px up to 1199px.
+
 `large` : Widths 1200px and larger.
 
 ### Customizing
