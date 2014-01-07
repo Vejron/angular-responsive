@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Angular Responsive
 Directive for hiding and showing elements based on view port width. The directive is for AngularJS `1.2.5+`.
 
@@ -120,7 +119,3 @@ A directive for responsive images will be added.
 
 ### Responsive classes
 A directive to add classes based on widths will be added. This directive will never be something that should be used in production, but as a tool for the early parts of development.
-=======
-angular-responsive
-==================
->>>>>>> 23d540e93f67a80a1ba55dc3324fd159d398b606
