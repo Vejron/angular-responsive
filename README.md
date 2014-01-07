@@ -52,7 +52,7 @@ There are a number of classes used for showing and hiding.
 
 #### Bootstrap
 
-The classes and widths used by the directive have been copied from [Bootstrap](http://getbootstrap.com/). It's however possible to customize both the classes and the widths used, see the [documentation below](#Customizing)
+The classes and widths used by the directive have been copied from [Bootstrap](http://getbootstrap.com/). It's however possible to customize both the classes and the widths used, see the [documentation below](#customizing)
 
 ### Widths
 
