@@ -2,15 +2,13 @@
   "author": "Emanuel Eriksson",
   "name": "angular-responsive",
   "version": "0.5.0",
-  "homepage": "",
   "licenses": {
     "type": "MIT",
-    "url": ""
+    "url": "https://github.com/EmanuelEriksson/angular-responsive/blob/master/LICENSE"
   },
-  "bugs": "",
   "repository": {
     "type": "git",
-    "url": "git:"
+    "url": "https://github.com/EmanuelEriksson/angular-responsive.git"
   },
   "dependencies": {},
   "devDependencies": {
