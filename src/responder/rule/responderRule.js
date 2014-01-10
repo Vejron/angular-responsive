@@ -45,8 +45,8 @@ angular.module( 'responsive.responder.rule', ['responsive.width'])
                 }
                 return null;
             };
-            var createDefaultRule = function(){
-                var rule = {};
+            var createDefaultWidthRules = function(){
+                var widthRules = {};
                 var availableWidths = widthOptions.widths;
                 for (var i = 0; i < availableWidths.length; i++) {
                     var width = availableWidths[i];
@@ -54,26 +54,34 @@ angular.module( 'responsive.responder.rule', ['responsive.width'])
                     if (name === undefined){
                         throw "WidthOption lacks name";
                     }
-                    rule[name] = {visible:false};
+                    widthRules[name] = {visible:false};
                 }
-                return rule;
+                return widthRules;
             };
-            var createRule = function(active){
-                var rule = createDefaultRule();
+            var createWidthRules = function(active){
+                var widthRules = createDefaultWidthRules();
                 for (var i = 0; i < active.length; i++) {
                     var activeRule = active[i];
                     for (var j = 0; j < activeRule.visible.length; j++) {
                         var visible = activeRule.visible[j];
-                        rule[visible].visible = true;
+                        widthRules[visible].visible = true;
                     }
                 }
-                return rule;
+                return widthRules;
+            };
+            var createRule = function(active){
+                return new Rule(createWidthRules(active));
+            };
+            var Rule = function(widthRules){
+                this.rules = widthRules;
+            };
+            Rule.prototype.widthValue = function(widthName){
+                return this.rules[widthName].visible;
             };
             var RuleFactory = function(){};
             RuleFactory.prototype.getRule = function(classes){
                 var active = getActiveClassDescriptors(classes);
-                var rule = createRule(active);
-                return rule;
+                return createRule(active);
             };
 
 

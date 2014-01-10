@@ -26,37 +26,40 @@ describe( 'ResponderRule', function() {
         });
 
     });
-
-
-
-	it('All should be false on empty string',function(){
+    it('All should be false on empty string',function(){
         var rule = ruleFactory.getRule("");
-        expect(rule.small.visible).toBeFalsy();
-        expect(rule.medium.visible).toBeFalsy();
-        expect(rule.large.visible).toBeFalsy();
-	});
+        expect(rule.widthValue('small')).toBeFalsy();
+        expect(rule.widthValue('medium')).toBeFalsy();
+        expect(rule.widthValue('large')).toBeFalsy();
+    });
+
     it('Single class',function(){
         var rule = ruleFactory.getRule("vs");
-        expect(rule.small.visible).toBeTruthy();
-        expect(rule.medium.visible).toBeFalsy();
-        expect(rule.large.visible).toBeFalsy();
+        expect(rule.widthValue('small')).toBeTruthy();
+        expect(rule.widthValue('medium')).toBeFalsy();
+        expect(rule.widthValue('large')).toBeFalsy();
     });
+
     it('Two classes',function(){
         var rule = ruleFactory.getRule("vs vm");
-        expect(rule.small.visible).toBeTruthy();
-        expect(rule.medium.visible).toBeTruthy();
-        expect(rule.large.visible).toBeFalsy();
+        expect(rule.widthValue('small')).toBeTruthy();
+        expect(rule.widthValue('medium')).toBeTruthy();
+        expect(rule.widthValue('large')).toBeFalsy();
     });
+
     it('Bad class',function(){
         var exec = function(){
             var rule = ruleFactory.getRule("vsvm");
         };
         expect(exec).toThrow();
     });
+
     it('Classes that shouldn\'t be combined',function(){
         var rule = ruleFactory.getRule("vs hs");
-        expect(rule.small.visible).toBeTruthy();
-        expect(rule.medium.visible).toBeTruthy();
-        expect(rule.large.visible).toBeTruthy();
+        expect(rule.widthValue('small')).toBeTruthy();
+        expect(rule.widthValue('medium')).toBeTruthy();
+        expect(rule.widthValue('large')).toBeTruthy();
     });
+
+
 });

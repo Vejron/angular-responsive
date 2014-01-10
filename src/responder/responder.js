@@ -1,12 +1,12 @@
 angular.module( 'responsive.responder', ['responsive.listener','responsive.responder.rule'])
-    .factory('responderFactory',['widthEventListener','responderRuleFactory',function(listener,responderRuleFactory){
+.factory('responderFactory',['widthEventListener','responderRuleFactory',function(listener,responderRuleFactory){
     var Responder = function(rule){
         this.rule = rule;
     };
     Responder.prototype.registerTrigger = function(func){
         var rule = this.rule;
         this.listener = function(width){
-            var response = rule[width.name].visible;
+            var response = rule.widthValue(width.name);
             func(response);
         };
         listener.subscribe(this.listener);
@@ -17,6 +17,7 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
     var ResponderFactory = function(){};
     ResponderFactory.prototype.getBooleanResponder = function(classes){
         var rule = responderRuleFactory.getRule(classes);
+
         return new Responder(rule);
     };
     return new ResponderFactory();

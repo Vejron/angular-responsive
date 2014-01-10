@@ -11,10 +11,14 @@ describe( 'Boolean Responder', function() {
 
         MockResponderRuleFactory = {};
         MockResponderRuleFactory.getRule = function(){
-            return {
-                "small":{visible:false},
-                "big":{visible:true}
+            var rule = {};
+            rule.widthValue = function(name){
+                if (name === "small"){
+                    return false;
+                }
+                return true;
             };
+            return rule;
         };
         module('responsive.responder',function($provide) {
 
