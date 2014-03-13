@@ -4,6 +4,7 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         var Responder = function(){
             this.listener = null;
         };
+
         Responder.prototype.createListener = function(func){};
         Responder.prototype.registerTrigger = function(func){
             this.createListener(func);
@@ -11,6 +12,15 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         };
         Responder.prototype.deregister = function(){
             eventListener.unSubscribe(this.listener);
+        };
+        Responder.prototype.createListener = function(func){
+            this.listener = function(width){
+                var response = rule.widthValue();
+                func(width.name);
+            };
+        };
+        ResponderFactory.prototype.getResponder = function(){
+            return new Responder();
         };
         var BooleanResponder = function(rule){
             this.rule = rule;

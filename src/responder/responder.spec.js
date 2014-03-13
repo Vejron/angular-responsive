@@ -15,7 +15,28 @@ describe( 'Responders -',function(){
             $provide.value('widthEventListener', mockListener);
             $provide.value('responderRuleFactory', MockResponderRuleFactory);
         });
-    } ;
+    };
+    describe('Responder', function(){
+        beforeEach(function(){
+            MockResponderRuleFactory = {};
+            doProvide();
+
+            inject(function(responderFactory) {
+                responder = responderFactory.getResponder();
+            });
+
+        });
+
+        it ('Shouldn\'t have subscribed on init',function(){
+            expect(mockListener.subscribe).not.toHaveBeenCalled();
+        });
+
+        it ('should register for listener when a trigger function is set', function(){
+            var test = function(){};
+            responder.registerTrigger(test);
+            expect(mockListener.subscribe).toHaveBeenCalled();
+        });
+    });
     describe( 'Boolean Responder', function() {
 
         beforeEach(function(){
@@ -38,15 +59,6 @@ describe( 'Responders -',function(){
 
         });
 
-        it ('Shouldn\'t have subscribed on init',function(){
-            expect(mockListener.subscribe).not.toHaveBeenCalled();
-        });
-
-        it ('should register for listener when a trigger function is set', function(){
-            var test = function(){};
-            responder.registerTrigger(test);
-            expect(mockListener.subscribe).toHaveBeenCalled();
-        });
         it ('should get false on small', function(){
             var trigger = jasmine.createSpy('trigger');
             responder.registerTrigger(trigger);
@@ -87,14 +99,6 @@ describe( 'Responders -',function(){
                 inject(function(responderFactory) {
                     responder = responderFactory.getStringResponder([{classes:'small',response:firstResponse},{classes:'big',response:secondResponse}]);
                 });
-            });
-            it ('Shouldn\'t have subscribed on init',function(){
-                expect(mockListener.subscribe).not.toHaveBeenCalled();
-            });
-            it ('should register for listener when a trigger function is set', function(){
-                var test = function(){};
-                responder.registerTrigger(test);
-                expect(mockListener.subscribe).toHaveBeenCalled();
             });
             it ('should get correct response on small', function(){
                 var trigger = jasmine.createSpy('trigger');
