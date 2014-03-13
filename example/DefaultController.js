@@ -11,4 +11,5 @@ angular.module( 'default', ['example'])
             {name:'large',desc:'≥1200px'}
             ]
         $scope.selected = 'default';
+
 }]);

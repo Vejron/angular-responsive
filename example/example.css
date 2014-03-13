@@ -9,6 +9,11 @@ body{
 h1{
     font-size: 1.5rem;
 }
+h1 .subHeading,
+h2 .subHeading{
+    font-size: .7em;
+    font-weight: normal;
+}
 h1.topHeading{
     margin-top:0;
 }
