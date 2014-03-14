@@ -5,17 +5,13 @@ angular.module( 'example', ['responsive.if','responsive.responder'])
         $scope.width = $window.innerWidth;
         angular.element($window).on('resize', function(event){
             $scope.width = $window.innerWidth;
-            $scope.$apply();
+            $scope.$digest();
         });
         $scope.visible = {}
         $scope.hidden = {}
-        $scope.loaded = false;
         var buildResponseFunction = function(responseClass,target){
             return function(response){
                 target[responseClass] = response;
-                if ($scope.loaded){
-                    $scope.$apply();
-                }
                 $scope.visible = $scope.visible;
             }
         }
