@@ -8,10 +8,8 @@ angular.module('responsive.if',['responsive.responder']).directive('eeResponsive
         link: function ($scope, $element, $attr, ctrl, $transclude) {
             var responder = null;
             $scope.$watch($attr.eeResponsiveIf, function (value) {
-                ready = false;
                 deregister();
                 if (value){
-
                     responder = responderFactory.getBooleanResponder(value);
                     responder.registerTrigger(responderFunction);
                 }

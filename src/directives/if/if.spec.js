@@ -63,5 +63,4 @@ describe('if', function(){
         $scope.$destroy();
         expect(mockResponder.deregister).toHaveBeenCalled();
     });
-    //test unregister called on destroy
 });
