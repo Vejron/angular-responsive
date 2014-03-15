@@ -1,7 +1,7 @@
 angular.module('responsive.src', ['responsive.responder.rule']).directive('eeSrc',['srcPostLink',function(postLink){
     return {
         restrict: "E",
-        require:'?^ee-responsive-include',
+        require:'?^ee-responsive-image',
         link:postLink
     };
 
