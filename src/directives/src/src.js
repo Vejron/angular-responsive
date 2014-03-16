@@ -9,7 +9,7 @@ angular.module('responsive.src', ['responsive.responder.rule']).directive('eeSrc
 }]).factory('srcPostLink',[function(){
         var postLink = function(scope,iElement,iAttrs,controller){
             if (!controller){
-                throw 'No controller, eeSrc must be have a parent directive, \'ee-responsive-include\'';
+                throw 'No controller, ee-src must be have a parent directive, \'ee-responsive-include\'';
             }
             if (!iAttrs.responsiveSrc){
                 throw 'Must have a responsive-src attribute';
