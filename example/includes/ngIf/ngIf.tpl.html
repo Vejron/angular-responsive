@@ -1,11 +1,11 @@
 <h2 class="heading">ng-if <span class="subHeading">using BooleanResponder</span></h2>
 <div class="clear">
     <div class="float info">
-        <div ng-init="base=visible" ng-repeat="class in visibleClasses" ng-include="'includes/ngIf/classRow.html'">
+        <div ng-init="base=visible" ng-repeat="class in visibleClasses" ng-include="'includes/ngIf/classRow.tpl.html'">
         </div>
     </div>
     <div class="float info">
-        <div ng-init="base=hidden" ng-repeat="class in hiddenClasses" ng-include="'includes/ngIf/classRow.html'">
+        <div ng-init="base=hidden" ng-repeat="class in hiddenClasses" ng-include="'includes/ngIf/classRow.tpl.html'">
         </div>
     </div>
 </div>
