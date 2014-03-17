@@ -48,6 +48,11 @@ There are a number of classes used for showing and hiding.
 
 `hidden-lg` : Showing on all except on 'large'.
 
+
+#### Bootstrap
+
+The classes and widths used by the directive have been copied from [Bootstrap](http://getbootstrap.com/). It's however possible to customize both the classes and the widths used, see the [documentation below](#customizing)
+
 ### Widths
 
 The named widths are the following:
