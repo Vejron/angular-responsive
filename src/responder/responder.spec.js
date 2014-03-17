@@ -36,6 +36,14 @@ describe( 'Responders -',function(){
             responder.registerTrigger(test);
             expect(mockListener.subscribe).toHaveBeenCalled();
         });
+
+        it('should respond with name of class',function(){
+            var triggeredResponse;
+            var test = function(response){triggeredResponse = response;};
+            responder.registerTrigger(test);
+            mockListener.subscriber({name:"small"});
+            expect(triggeredResponse).toBe('small');
+        });
     });
     describe( 'Boolean Responder', function() {
 
