@@ -15,7 +15,7 @@ angular.module( 'responsive.responder', ['responsive.listener','responsive.respo
         };
         Responder.prototype.createListener = function(func){
             this.listener = function(width){
-                var response = rule.widthValue();
+                var response = width.name;
                 func(width.name);
             };
         };
