@@ -115,3 +115,55 @@ h1,h2,h3,h4,h5,h6{
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
 }
+.shortBox{
+    height: 300px;
+    overflow: auto;
+}
+.floatBox{
+    float: left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+
+}
+.xsmallInclude{
+    font-size: 24px;
+}
+.smallInclude{
+    font-size: 18px;
+}
+.xsmallInclude,
+.smallInclude{
+    position: relative;
+    padding-top:40px;
+}
+.xsmallInclude h1,
+.smallInclude h1{
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    position:absolute;
+}
+
+.smallInclude .floatBox{
+    width:50%;
+}
+.largeInclude .floatBox,
+.mediumInclude .floatBox{
+    width:33.3%;
+}
+.largeInclude .floatBox.quoted:before {
+    padding: 0;
+    border: none;
+    color: #83C77B;
+
+    content: attr(data-quote);
+
+    float: right;
+    width: 33%;
+    margin: 53px 0px 0px 20px;
+
+    font-size: 18px;
+    line-height: 1.2em;
+}

@@ -25,5 +25,15 @@ angular.module( 'example', ['responsive.if','responsive.responder'])
         addResponders($scope.visibleClasses,$scope.visible);
         addResponders($scope.hiddenClasses,$scope.hidden);
 
+        var responder = responderFactory.getStringResponder(
+            [{classes:'visible-xs',response:'includes/exampleIncludes/xsmall.tpl.html'},
+             {classes:'visible-sm',response:'includes/exampleIncludes/small.tpl.html'},
+             {classes:'visible-md',response:'includes/exampleIncludes/medium.tpl.html'},
+             {classes:'visible-lg',response:'includes/exampleIncludes/large.tpl.html'}
+        ]);
+        var ngIncludeTrigger = function(response){
+            $scope.ngInclude = response;
+        };
+        responder.registerTrigger(ngIncludeTrigger);
         $scope.loaded = true;
 }]);
