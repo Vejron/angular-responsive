@@ -209,7 +209,7 @@ Rewrite to not use code copied from ngIf.
 A directive for responsive images will be added.
 
 ### Responsive include
-Create a directive to 
+Create a directive to work as ngInclude in the same way as responsiveIf.
 
 ### Responsive classes
 A directive to add classes based on widths will be added. This directive will never be something that should be used in production, but as a tool for the early parts of development.
