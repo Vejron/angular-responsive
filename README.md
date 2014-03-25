@@ -2,7 +2,7 @@
 Library for changing content based on view port width. The library is for AngularJS `1.2.5+`.
 
 ## Building
-First install dependencies.
+Make sure you have [Node.js](http://nodejs.org), then install dependencies.
 
 ```shell
 npm install -g grunt-cli
@@ -15,6 +15,12 @@ Then to build the library just run grunt.
 ```shell
 grunt
 ```
+### Testing
+For testing [PhantomJS](http://phantomjs.org) is used, make sure you have it installed. If you wan't to use a different browser install a launcher for it. To install the runner for Firefox and save the dependency to the node development dependencies run npm as follows.
+```shell
+npm install karma-firefox-launcher --save-dev
+```
+
 ### Example
 You can launch an example page by running grunt example.
 
