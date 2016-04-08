@@ -1,6 +1,7 @@
 {
     "name": "angular-responsive",
     "description": "Responsive directives for AngularJS",
+    "main": "./angular-responsive.js",
     "version": "0.5.0",
     "devDependencies": {
         "angular": "~1.2.5",
