@@ -3,13 +3,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-open');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        build_dir: 'build',
+        build_dir: 'dist',
         srcs:['src/**/*.js','!src/**/*.spec.js'],
         test_srcs:['src/**/*.spec.js'],
         all_srcs: 'src/**/*.js',
@@ -27,7 +23,7 @@ module.exports = function(grunt) {
         ],
         concat: {
             options: {
-                banner: '<%= banner %>'
+                separator: ';'
             },
             build: {
                 src: [
@@ -38,11 +34,13 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '<%= banner %>'
+              screwIE8: true,
+              
             },
             build: {
-                src: '<%= build_dir %>/<%= file_name %>.js',
-                dest: '<%= build_dir %>/<%= file_name %>.min.js'
+              files: {
+                '<%= build_dir %>/<%= file_name %>.min.js': '<%= build_dir %>/<%= file_name %>.js'
+              }
             }
         },
         jshint: {
@@ -65,39 +63,9 @@ module.exports = function(grunt) {
                 eqnull: true
             }
         },
-        karma: {
-            options: {
-                files: ['bower_components/angular/angular.js','bower_components/angular-mocks/angular-mocks.js','<%= all_srcs %>'],
-                frameworks: [ 'jasmine' ],
-                runnerPort: 9999,
-                plugins: [ 'karma-jasmine', 'karma-phantomjs-launcher','karma-firefox-launcher' ]
-            },
-            continuous: {
-                singleRun: true,
-                browsers: ['PhantomJS']
-            },
-            dev: {
-                reporters: 'dots'
-            }
-        },
-        connect: {
-            example:{
-                options: {
-                    port:3000
-                }
-            }
-        },
-        open: {
-            example:{
-                path: 'http://localhost:3000/example/index.html'
-            }
-        },
-        watch:{
-
-        }
+        
 
     });
-    grunt.registerTask('build', ['clean','jshint','karma:continuous','concat','uglify']);
+    grunt.registerTask('build', ['clean','jshint','concat','uglify']);
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('example',['build','connect:example','open:example','watch']);
 };
